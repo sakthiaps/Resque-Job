@@ -1,24 +1,8 @@
 # README
+Encrypt and decrypt the phone number.(Restrict to view original phone number in the database)
+Read phone number from CSV file and convert to encrypted format and store into the database.
+Retrieve phone number from database and display in the view.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Upload CSV file
+2. Resque used for handling background job like parsing and importing encrypt phone number in the database.
+3. View the available phone numbers in decrypt format
