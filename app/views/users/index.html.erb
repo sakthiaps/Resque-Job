@@ -1,0 +1,34 @@
+<section class="large-12 import excel overview">
+  <fieldset>
+    <p>Import data into database</p>
+    <%= form_tag(users_path, :multipart => true, :method => :post) do -%>
+      <%= file_field_tag('data_file') %>
+      <div>
+        <%= submit_tag("Upload", :id => 'upload_button') %>
+      </div>
+    <% end -%>
+  </fieldset>
+  <% if @users.present? %>
+    <fieldset>
+      <div>
+        <p> User details</p>
+        <table>
+          <thead>
+            <tr>
+               <th>Name</th>
+               <th>Mobile Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.name %></td>
+                <td><%= user.mobile_no %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  <% end -%>
+</section>
